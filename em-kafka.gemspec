@@ -15,7 +15,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "eventmachine", ">= 1.0.0.beta.4"
+  s.add_dependency "eventmachine-le", ">= 1.1.5"
   s.add_dependency "yajl-ruby",    ">= 0.8.2"
+
+  s.add_development_dependency "rake"
+  s.add_development_dependency "bundler"
   s.add_development_dependency "rspec", "~> 2.6.0"
 end

@@ -1,15 +1,16 @@
 PATH
   remote: .
   specs:
-    em-kafka (0.0.1)
-      eventmachine (>= 1.0.0.beta.4)
+    em-kafka (0.0.2)
+      eventmachine-le (>= 1.1.5)
       yajl-ruby (>= 0.8.2)
 
 GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.3)
-    eventmachine (1.0.0.beta.4)
+    eventmachine-le (1.1.5)
+    rake (10.1.0)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -24,5 +25,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   em-kafka!
+  rake
   rspec (~> 2.6.0)

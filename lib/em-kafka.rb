@@ -1,4 +1,4 @@
-require "eventmachine"
+require "eventmachine-le"
 require "logger"
 require "uri"
 require "yajl"

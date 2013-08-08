@@ -39,14 +39,15 @@ module EventMachine
 
       def parse(frame)
         i = 0
+        messages = []
         while i <= frame.length do
           break unless message_size = frame[i, 4].unpack("N").first
           message_data = frame[i, message_size + 4]
           message = Kafka::Message.decode(message_size, message_data)
           i += message_size + 4
-          @block.call(message)
+          messages << message
         end
-
+        @block.call(messages) unless messages.empty?
         advance_offset(i)
         reset
       end

@@ -4,8 +4,8 @@ describe EM::Kafka::Parser do
   describe "parse" do
     it "parses messages from newline boundaries across packets" do
       messages = []
-      parser = EM::Kafka::Parser.new do |message|
-        messages << message
+      parser = EM::Kafka::Parser.new do |msgs|
+        messages.concat(msgs)
       end
 
       message_1 = EM::Kafka::Message.new("foo").encode
